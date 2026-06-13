@@ -60,6 +60,17 @@ export default function Home() {
     setMode("start");
   };
 
+  const resetIzakayaOnly = () => {
+    const finalBoard = saved.tetris?.finalBoard;
+    if (!finalBoard) return;
+    setSaved((current) => ({
+      ...current,
+      mode: "izakaya",
+      izakaya: buildFreshIzakayaState(finalBoard)
+    }));
+    setMode("izakaya");
+  };
+
   return (
     <main className="safe-bottom mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-3 py-4 sm:px-6 lg:px-8">
       {mode === "start" && (
@@ -87,7 +98,7 @@ export default function Home() {
             setSaved((current) => ({ ...current, mode: izakaya.cleared ? "result" : "izakaya", izakaya }));
             if (izakaya.cleared) setMode("result");
           }}
-          onResetIzakaya={() => saved.tetris?.finalBoard && setSaved((current) => ({ ...current, mode: "izakaya", izakaya: buildFreshIzakayaState(saved.tetris!.finalBoard) }))}
+          onResetIzakaya={resetIzakayaOnly}
           onRestartTetris={beginNewTetris}
           onDeleteAll={resetAll}
         />
