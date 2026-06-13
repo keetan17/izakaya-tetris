@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#110d0b"/>
+  <circle cx="256" cy="236" r="158" fill="#d51f1f" stroke="#ffef7a" stroke-width="18"/>
+  <text x="256" y="288" text-anchor="middle" font-size="168" font-family="sans-serif" font-weight="900" fill="#fff4b8">呑</text>
+  <rect x="112" y="376" width="288" height="32" rx="16" fill="#7a3f1e"/>
+</svg>
